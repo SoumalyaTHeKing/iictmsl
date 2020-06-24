@@ -21,6 +21,9 @@
             <span></span>
         </div>
     </div>
+    <div style="float: right; cursor: pointer;" id="dark-icon">
+        <i class="fa fa-moon fa-lg"></i>
+    </div>
     <!--============================Navbar SetUp Html==========================-->
     <div class="responsive-bar">
         <div class="icon">
@@ -48,26 +51,26 @@
         <span class="underlineCon animated fadeInRight"></span>
         <div class="contact">
             <div class="phone">
-                <div>
+                <div id="card1">
                     <i class="fas fa-address-card" style="margin-bottom: 40px;font-size: 30px"></i>
                     <h3 class="animated fadeInRight">Kaushik Ghosh</h3>
                     <h4>Start-up Head </h4>
-                    <h4 class="animated fadeInLeft">Phone: <a href="tel:8809441240">8809441240</a></h4>
-                    <h4>Gmail: <a href="mailto:iic.tmsl@gmail.com">iic.tmsl@gmail.com</a></h4>
+                    <h4 class="animated fadeInLeft">Phone: <a href="tel:8809441240" class="cards">8809441240</a></h4>
+                    <h4>Gmail: <a href="mailto:iic.tmsl@gmail.com" class="cards">iic.tmsl@gmail.com</a></h4>
                 </div>
-                <div>
+                <div id="card2">
                     <i class="fas fa-address-card" style="margin-bottom: 40px;font-size: 30px"></i>
                     <h3 class="animated fadeInRight">Ritwik Gupta </h3>
                     <h4>Innovation Head</h4>
-                    <h4 class="animated fadeInLeft">Phone: <a href="tel:861780574">8617808574</a></h4>
-                    <h4>Gmail: <a href="mailto:iic.tmsl@gmail.com">iic.tmsl@gmail.com</a></h4>
+                    <h4 class="animated fadeInLeft">Phone: <a href="tel:861780574"class="cards">8617808574</a></h4>
+                    <h4>Gmail: <a href="mailto:iic.tmsl@gmail.com"class="cards">iic.tmsl@gmail.com</a></h4>
                 </div>
-                <div>
+                <div id="card3">
                     <i class="fas fa-address-card" style="margin-bottom: 40px;font-size: 30px"></i>
                     <h3 id="cha" class="animated fadeInRight">Sumit Kumar Mahto</h3>
                     <h4>Social Media Head</h4>
-                    <h4 class="animated fadeInLeft">Phone: <a href="tel:9572683975">9572683975</a></h4>
-                    <h4>Gmail: <a href="mailto:iic.tmsl@gmail.com">iic.tmsl@gmail.com</a></h4>
+                    <h4 class="animated fadeInLeft">Phone: <a href="tel:9572683975"class="cards">9572683975</a></h4>
+                    <h4>Gmail: <a href="mailto:iic.tmsl@gmail.com"class="cards">iic.tmsl@gmail.com</a></h4>
                 </div>
             </div>
         </div>
@@ -126,6 +129,58 @@
             })
         })
         console.clear();
+    </script>
+    <script>
+    $(document).ready(function()
+{
+    $("#dark-icon").click(function(){
+        //light theme
+        if ($('#dark-icon').children('i').hasClass('fa-moon')) {
+            $('#dark-icon').children('i').removeClass('fa-moon');
+            $('#dark-icon').children('i').addClass('fa-lightbulb');
+            $(this).css
+            ("color","white");
+            $('body').css
+            ({"background-color":"black","color":"white"});
+            $("#card1,#card2,#card3").css
+            ("border","1px solid white");
+            $("a").css
+            ({"background":"black","color":"white"});
+            $(".cards").hover(function()
+            {
+                $(this).css({"color":"yellow", "background":"black"});
+            },
+            function()
+            {
+                $(this).css({"background":"black","color":"white"});
+            });
+        }
+        //dark theme
+        else
+        {
+            $('#dark-icon').children('i').removeClass('fa-lightbulb');
+            $('#dark-icon').children('i').addClass('fa-moon');
+            $(this).css
+            ("color","black");
+            $('body').css
+            ({"background-color":"white","color":"black"});
+            $("#card1,#card2,#card3").css
+            ("border","1px solid black");
+            $("a").css
+            ({"background":"white","color":"black"});
+            $(".cards").hover(function()
+            {
+                $(this).css({"color":"rgb(20,50,138)", "background":"white"});
+            },
+            function()
+            {
+                $(this).css({"background":"white","color":"black"});
+            });                  
+        }
+    });
+
+});
+
     </script>
 </body>
 
