@@ -120,6 +120,7 @@ body{
 	{
 		width: 100%;
 		height: 100%;
+		padding-top: 10px;
 	}
 /* Changed the link colours*/
 .contact .phone a:link{
@@ -139,15 +140,17 @@ body{
 .contact .phone div h4{
 	margin-bottom: 10px;
 }
-/* Media queries for icon image*/
+
 @media screen and (max-width: 380px){
 	#cha{
 		font-size: 14px;
 	}
+	/* Media queries for icon image*/
 	.responsive-bar .icon img
 	{
-		width: 400px;
-		padding: 10px 10px 0px 10px;
+		width: 350px;
+		padding-top: 10px;
+		padding-left: 20px;
 	}
 }
 @media screen and (max-width: 280px){
