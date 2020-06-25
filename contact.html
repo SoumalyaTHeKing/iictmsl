@@ -140,7 +140,7 @@
     $(document).ready(function()
 {
     $("#dark-icon").click(function(){
-        //light theme
+        //dark theme
         if ($('#dark-icon').children('i').hasClass('fa-moon')) {
             $('#dark-icon').children('i').removeClass('fa-moon');
             $('#dark-icon').children('i').addClass('fa-lightbulb');
@@ -162,24 +162,34 @@
             });
             $(".contact .phone div").hover(function()
             {
+                $(this).addClass('glow');
                 $(this).css
                     ({
-                        "box-shadow": "5px 10px white",
                         "border": "5px white inset",
                         "text-shadow":"1px 1px #d4d4d4"
                     });
             },   
             function()
             {
+                $(this).removeClass('glow');
                 $(this).css
                 ({
                     "border":"2px outset white",
-                    "box-shadow":"0px 0px",
                     "text-shadow":"0px 0px"
                 });
             });
+            $("footer a i").hover(function()
+            {
+                $(this).addClass('glow-icon');
+                $("footer a").css("color","white");
+            },
+            function()
+            {
+                $(this).removeClass('glow-icon');
+                $("footer a").css("color","black");
+            });
         }
-        //dark theme
+        //light theme
         else
         {
             $('#dark-icon').children('i').removeClass('fa-lightbulb');
@@ -202,6 +212,7 @@
             });
             $(".contact .phone div").hover(function()
             {
+                $(this).removeClass('glow');
                 $(this).css
                     ({
                         "box-shadow": "10px 20px #D4D4D4",
@@ -211,12 +222,21 @@
             },   
             function()
             {
+                $(this).removeClass('glow');
                 $(this).css
                 ({
                     "border":"2px outset rgba(0,0,0,0.6)",
                     "box-shadow":"0px 0px",
                     "text-shadow":"0px 0px"
                 });
+            });
+            $("footer a i").hover(function()
+            {
+                $(this).removeClass('glow-icon');
+            },
+            function()
+            {
+                $(this).removeClass('glow-icon');
             });
             $("html body footer a").css
             ({"background":"black","color":"black"});
